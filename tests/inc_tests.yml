@@ -1,0 +1,3 @@
+# Tests that role installs as expected with defaults. Which includes with no proxies.
+# - name: Test that docker is working (no proxy) with hello-world test
+    
