@@ -41,7 +41,12 @@
   tags: oc,openshift
   
 - name: Openshift client tool install
-  command: mv /tmp/"{{ openshift_oc_filename }}"/oc /usr/local/sbin/oc  
+  command: "mv /tmp/{{ openshift_oc_filename }}/oc /usr/local/sbin/oc_{{ openshift_oc_version }}"  
+  when: oc_stat.stdout.find(openshift_oc_version) == -1
+  tags: oc,openshift 
+  
+- name: Openshift client tool link 
+  command: "ln -sf /usr/local/sbin/oc_{{ openshift_oc_version }} /usr/local/sbin/oc"  
   when: oc_stat.stdout.find(openshift_oc_version) == -1
   tags: oc,openshift 
 

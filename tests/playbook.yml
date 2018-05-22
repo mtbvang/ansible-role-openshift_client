@@ -5,4 +5,13 @@
     - all
     
   roles:
-    - ../../ansible-role-openshift_client
+    - role: ../../ansible-role-openshift_client
+    - role: ../../ansible-role-openshift_client
+      openshift_oc_version: v3.6.0-rc.0
+      openshift_oc_url: https://github.com/openshift/origin/releases/download
+      openshift_oc_version_hash: 98b3d56
+      openshift_oc_filename: "openshift-origin-client-tools-{{ openshift_oc_version }}-{{ openshift_oc_version_hash }}-linux-64bit"
+      openshift_oc_sha256: 5808b3d29c72d04643c98ee1f51611222fa4c14fe420632d60812dc9b59755fd
+      openshift_oc_public_hostname: 127.0.0.1
+      openshift_oc_path: /usr/local/sbin  
+      
